@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 
 
 contract TinderERC721 is ERC721URIStorage {
-    
+
     uint256 TINDER_TOKEN_ID;
 
     constructor() ERC721("SparkNFT", "LOVE") {}
@@ -21,4 +21,4 @@ contract TinderERC721 is ERC721URIStorage {
         _setTokenURI(TINDER_TOKEN_ID, tokenURI);
         TINDER_TOKEN_ID++;
     }
-};
+}
