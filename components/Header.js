@@ -1,4 +1,5 @@
-
+import Image from "next/image"
+import fire from '../assets/fire.png'
 
 const style = {
     wrapper: `h-24 py-11 text-white flex w-screen items-center px-16 justify-between`,
@@ -16,6 +17,7 @@ const Header = () => {
     return(
         <div className={style.wrapper}>
             <div className={style.main}>
+                <Image height={45} width={45} alt='fire' src={fire}/>
                 <h1 className={style.tinderText}>tinder</h1>
                 <div className={style.leftMenu}>
                     <div className={style.menuItem}>Products</div>
@@ -26,7 +28,7 @@ const Header = () => {
                 </div>
 
                 <div className={style.rightMenu}>
-                    <div>English</div>
+                    <div>ENGLISH</div>
                     {/* When the user is loged in the button is swapped for the currentAccount*/}
                     <button className={style.authButton} onClick={() => connectWallet()}>
                         Login
