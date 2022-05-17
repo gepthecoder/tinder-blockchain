@@ -10,7 +10,7 @@ export default function Home() {
     <div className={style.wrapper}>
       {/*<Header />*/}
       <div className={style.cardsContainer}>
-        {/*<Header />*/}
+        {/*<Card />*/}
       </div>
     </div>
   )
