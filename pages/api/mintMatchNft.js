@@ -9,6 +9,15 @@ const mintMatchNft = async (req, res) => {
         appId: process.env.MORALIS_APP_ID,
         masterKey: process.env.MORALIS_MASTER_KEY,
     })
+
+    /* Includes all the data we want to include as a part of an nft  */
+    const metadata = {
+        name: `${req.body.names[0]} & ${req.body.names[1]}`,
+        description: `${req.body.names[0].split(' ')[0]} & ${
+          req.body.names[1].split(' ')[0]
+        } just matched <3`,
+        image: `ipfs://QmY4tKpDGzVHzaSkQc5gzVMCMNoznZqaX15DXkyL2bPp8Z`,
+    }
 }
   
 export default mintMatchNft
