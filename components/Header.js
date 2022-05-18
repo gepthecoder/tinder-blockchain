@@ -1,3 +1,4 @@
+import React from 'react'
 import Image from "next/image"
 import fire from '../assets/fire.png'
 
@@ -11,7 +12,9 @@ const style = {
     currentAccount: `px-2 py-1 border border-gray-500 rounded-full flex items-center`,
     accountAddress: `ml-2`,
     authButton: `bg-white font-bold text-red-500 px-6 py-3 items-center ml-4 rounded-lg hover:bg-red-500 duration-300 hover:text-white`,
-  }
+}
+
+const currentAccount = ""
 
 const Header = () => {
     return(
@@ -30,20 +33,18 @@ const Header = () => {
                 <div className={style.rightMenu}>
                     <div>ENGLISH</div>
                     {/* When the user is loged in the button is swapped for the currentAccount*/}
-                    <button className={style.authButton} onClick={() => connectWallet()}>
-                        Login
-                    </button>
-                    {/* {currentAccount ? (
+                    {/* If there is a current acc -> load up the stylish part*/}
+                    {currentAccount ? (
                     <>
                         <div className={style.currentAccount}>
-                        <Image
+                        {/* <Image
                             src={
                             'https://moralis.io/wp-content/uploads/2021/05/moralisWhiteLogo.svg'
                             }
                             alt='moralis'
                             height={20}
                             width={20}
-                        />
+                        /> */}
                         <span className={style.accountAddress}>
                             {currentAccount.slice(0, 6)}...{currentAccount.slice(39)}
                         </span>
@@ -59,8 +60,7 @@ const Header = () => {
                     <button className={style.authButton} onClick={() => connectWallet()}>
                         Login
                     </button>
-                    )} */}
-
+                    )}
                 </div>
             </div>
         </div>
