@@ -21,7 +21,7 @@ const style = {
   lightningColors: `border-purple-500 text-purple-500`,
 }
 
-const TinderCardItem = () => {
+const TinderCardItem = ({card}) => {
 
     const onSwipe = dir => {
         if (dir === 'right') {
@@ -37,17 +37,16 @@ const TinderCardItem = () => {
         >
             <div 
                 className={style.wrapper}
-                style={{ backgroundImage: `url("https://i1.sndcdn.com/avatars-000132613765-sb1joi-t500x500.jpg")` }}
+                style={{ backgroundImage: `url(${card.imageUrl})` }}
             >
                 <div className={style.space}>
                     <div className={style.name}>
-                        G3P
-                        <span className={style.age}>25</span>
+                        {card.name}
+                        <span className={style.age}>{card.age}</span>
                     </div>
                 </div>
                 <div className={style.walletAddress}>
-                    0x....C5E
-                    {/* {card.walletAddress.slice(0, 6)}...{card.walletAddress.slice(39)} */}
+                    {card.walletAddress.slice(0, 6)}...{card.walletAddress.slice(39)}
                 </div>
                 <div className={style.reactionsContainer}>
                     <div className={`${style.backColors} ${style.buttonContainer}`}>

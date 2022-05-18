@@ -108,6 +108,7 @@ export const TinderProvider = ({children}) => {
                 disconnectWallet,
                 currentAccount,
                 currentUser,
+                cardsData,
             }}
         >
         {children}
