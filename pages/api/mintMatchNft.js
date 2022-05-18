@@ -51,6 +51,8 @@ const mintMatchNft = async (req, res) => {
         walletWithProvider,
     )
 
+    console.log(contract)
+
     /* Invoke tinder contract with mint nft function [TinderERC721] */
     const tx = await contract.mintNFT(
         req.body.walletAddresses[0],
@@ -58,7 +60,11 @@ const mintMatchNft = async (req, res) => {
         metadataURI,
     )
 
+    console.log(tx)
+    console.log(await tx)
+
     const txReceipt = await tx.wait()
+    console.log(txReceipt)
 
     res.status(200).send({
         message: 'success',
