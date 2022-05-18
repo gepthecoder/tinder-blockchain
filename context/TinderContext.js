@@ -54,6 +54,27 @@ export const TinderProvider = ({children}) => {
         setCurrentAccount('')
     }
 
+    /* API Requests */
+
+    const requestToCreateUserProfile = async (walletAddress, name) => {
+        try {
+          await fetch(`/api/createUser`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              userWalletAddress: walletAddress,
+              name: name,
+            }),
+          })
+        } catch (error) {
+          console.error(error)
+        }
+    }
+
+
+
     /* Whatever we put in the value of provider we can use this function anywhere in our app */
     return (
         <TinderContext.Provider
