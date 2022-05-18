@@ -1,5 +1,5 @@
 import React from 'react'
-import profilePic from '../assets/profile-pic.jpg'
+import profilePic from '../assets/profile-pic.png'
 import logo from '../assets/logo.png'
 import { IoIosNotifications } from 'react-icons/io'
 import Image from 'next/image'
