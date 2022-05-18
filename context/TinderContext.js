@@ -13,6 +13,17 @@ export const TinderProvider = ({children}) => {
 
     const { authenticate, isAuthenticated, user, Moralis } = useMoralis()
 
+    useEffect((
+    ) => {
+        checkWalletConnection()
+        if (isAuthenticated) {
+            /* Grab all the users we can swipe left/right except us */
+            requestUsersData(user.get('ethAddress'))
+            /* Grab me and nobody else -> for separation */
+            requestCurrentUserData(user.get('ethAddress'))
+          }
+    }, [isAuthenticated])
+
     /* Moralis knows in the background if we are connected or not .. :o */
     const checkWalletConnection = async () => {
         if (isAuthenticated) {
@@ -42,9 +53,15 @@ export const TinderProvider = ({children}) => {
         setCurrentAccount('')
     }
 
+    /* Whatever we put in the value of provider we can use this function anywhere in our app */
     return (
         <TinderContext.Provider
-            value={{}}
+            value={{
+                connectWallet,
+                disconnectWallet,
+                currentAccount,
+                currentUser,
+            }}
         >
         {children}
       </TinderContext.Provider>
