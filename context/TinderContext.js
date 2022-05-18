@@ -23,7 +23,24 @@ export const TinderProvider = ({children}) => {
         /* There shouldn't be an account if the user is not created */
           setCurrentAccount('')
         }
-      }
+    }
+
+    const connectWallet = async () => {
+        if (!isAuthenticated) {
+          try {
+            await authenticate({
+              signingMessage: 'Log in using Moralis',
+            })
+          } catch (error) {
+            console.error(error)
+          }
+        }
+    }
+
+    const disconnectWallet = async () => {
+        await Moralis.User.logOut()
+        setCurrentAccount('')
+    }
 
     return (
         <TinderContext.Provider
