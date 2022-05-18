@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { SiTinder } from 'react-icons/si'
 import CardHeader from './CardHeader'
 import CardFooter from './CardFooter'

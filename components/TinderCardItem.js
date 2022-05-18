@@ -56,22 +56,22 @@ const TinderCardItem = ({card}) => {
                     <div className={`${style.backColors} ${style.buttonContainer}`}>
                         <FaUndoAlt
                         className={`${style.backColors} ${style.buttonSymbol}`}
-                        onClick={() => goBack()}
+                            onClick={() => goBack()}
                         />
                     </div>
                     <div className={`${style.xColors} ${style.buttonContainer}`}>
                         <AiOutlineClose
-                        className={`${style.xColors} ${style.buttonSymbol}`}
+                            className={`${style.xColors} ${style.buttonSymbol}`}
                         />
                     </div>
                     <div className={`${style.starColors} ${style.buttonContainer}`}>
                         <AiFillStar
-                        className={`${style.starColors} ${style.buttonSymbol}`}
+                            className={`${style.starColors} ${style.buttonSymbol}`}
                         />
                     </div>
                     <div className={`${style.lightningColors} ${style.buttonContainer}`}>
                         <BsFillLightningChargeFill
-                        className={`${style.lightningColors} ${style.buttonSymbol}`}
+                            className={`${style.lightningColors} ${style.buttonSymbol}`}
                         />
                     </div>
                 </div>
