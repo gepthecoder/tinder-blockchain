@@ -86,7 +86,18 @@ export const TinderProvider = ({children}) => {
         }
     }
     
-
+    const requestUsersData = async activeAccount => {
+        try {
+          const response = await fetch(
+            `/api/fetchUsers?activeAccount=${activeAccount}`,
+          )
+          const data = await response.json()
+    
+          setCardsData(data.data)
+        } catch (error) {
+          console.error(error)
+        }
+    }
 
 
     /* Whatever we put in the value of provider we can use this function anywhere in our app */
