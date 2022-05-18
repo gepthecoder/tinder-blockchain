@@ -4,7 +4,10 @@ import { MoralisProvider } from 'react-moralis'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <MoralisProvider>
+    <MoralisProvider
+      serverUrl='https://6sutfewfo80o.usemoralis.com:2053/server'
+      appId='aJumtntxtUb2XoPtK8OG3uMjS3QbGZhZ1xxgnI08'
+    >
        <TinderProvider>
           <Component {...pageProps} />
       </TinderProvider>
