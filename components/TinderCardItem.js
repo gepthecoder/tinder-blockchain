@@ -22,10 +22,56 @@ const style = {
 }
 
 const TinderCardItem = () => {
+
+    const onSwipe = dir => {
+        if (dir === 'right') {
+        //   handleRightSwipe(card, currentAccount)
+        }
+    }
+
     return(
-        <TinderCard>
-            <div className={style.wrapper}>
-                
+        <TinderCard
+            className={style.tinderCardWrapper}
+            preventSwipe={['up', 'down']}
+            onSwipe={onSwipe}
+        >
+            <div 
+                className={style.wrapper}
+                style={{ backgroundImage: `url("https://i1.sndcdn.com/avatars-000132613765-sb1joi-t500x500.jpg")` }}
+            >
+                <div className={style.space}>
+                    <div className={style.name}>
+                        G3P
+                        <span className={style.age}>25</span>
+                    </div>
+                </div>
+                <div className={style.walletAddress}>
+                    0x....C5E
+                    {/* {card.walletAddress.slice(0, 6)}...{card.walletAddress.slice(39)} */}
+                </div>
+                <div className={style.reactionsContainer}>
+                    <div className={`${style.backColors} ${style.buttonContainer}`}>
+                        <FaUndoAlt
+                        className={`${style.backColors} ${style.buttonSymbol}`}
+                        onClick={() => goBack()}
+                        />
+                    </div>
+                    <div className={`${style.xColors} ${style.buttonContainer}`}>
+                        <AiOutlineClose
+                        className={`${style.xColors} ${style.buttonSymbol}`}
+                        />
+                    </div>
+                    <div className={`${style.starColors} ${style.buttonContainer}`}>
+                        <AiFillStar
+                        className={`${style.starColors} ${style.buttonSymbol}`}
+                        />
+                    </div>
+                    <div className={`${style.lightningColors} ${style.buttonContainer}`}>
+                        <BsFillLightningChargeFill
+                        className={`${style.lightningColors} ${style.buttonSymbol}`}
+                        />
+                    </div>
+                </div>
             </div>
         </TinderCard>
     )
