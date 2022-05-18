@@ -73,6 +73,20 @@ export const TinderProvider = ({children}) => {
         }
     }
 
+    const requestCurrentUserData = async walletAddress => {
+        try {
+          const response = await fetch(
+            `/api/fetchCurrentUserData?activeAccount=${walletAddress}`,
+          )
+          const data = await response.json()
+    
+          setCurrentUser(data.data)
+        } catch (error) {
+          console.error(error)
+        }
+    }
+    
+
 
 
     /* Whatever we put in the value of provider we can use this function anywhere in our app */
