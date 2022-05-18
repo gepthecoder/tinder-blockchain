@@ -3,6 +3,7 @@ import { AiOutlineClose } from 'react-icons/ai'
 import { AiFillStar } from 'react-icons/ai'
 import { BsFillLightningChargeFill } from 'react-icons/bs'
 import React from 'react'
+import TinderCard from 'react-tinder-card'
 
 const style = {
   tinderCardWrapper: `w-full h-full absolute`,
@@ -22,9 +23,11 @@ const style = {
 
 const TinderCardItem = () => {
     return(
-        <div>
-
-        </div>
+        <TinderCard>
+            <div className={style.wrapper}>
+                
+            </div>
+        </TinderCard>
     )
   
 }
