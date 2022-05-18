@@ -13,17 +13,17 @@ export const TinderProvider = ({children}) => {
 
     const { authenticate, isAuthenticated, user, Moralis } = useMoralis()
 
-    /* constantly checking if the wallet is connected */
-    // useEffect((
-    // ) => {
-    //     checkWalletConnection()
-    //     if (isAuthenticated) {
-    //         /* Grab all the users we can swipe left/right except us */
-    //         requestUsersData(user.get('ethAddress'))
-    //         /* Grab me and nobody else -> for separation */
-    //         requestCurrentUserData(user.get('ethAddress'))
-    //       }
-    // }, [isAuthenticated])
+     /*constantly checking if the wallet is connected*/
+     useEffect((
+     ) => {
+         checkWalletConnection()
+         if (isAuthenticated) {
+             /* Grab all the users we can swipe left/right except us */
+             requestUsersData(user.get('ethAddress'))
+             /* Grab me and nobody else -> for separation */
+             requestCurrentUserData(user.get('ethAddress'))
+           }
+     }, [isAuthenticated])
 
     /* Moralis knows in the background if we are connected or not .. :o */
     const checkWalletConnection = async () => {
