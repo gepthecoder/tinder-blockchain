@@ -1,11 +1,14 @@
 import '../styles/globals.css'
 import { TinderProvider } from '../context/TinderContext'
+import { MoralisProvider } from 'react-moralis'
 
 function MyApp({ Component, pageProps }) {
   return (
-    <TinderProvider>
-        <Component {...pageProps} />
-    </TinderProvider>
+    <MoralisProvider>
+       <TinderProvider>
+          <Component {...pageProps} />
+      </TinderProvider>
+    </MoralisProvider>
   )
 }
 
