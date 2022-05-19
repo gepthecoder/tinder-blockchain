@@ -39,7 +39,7 @@ const Header = () => {
                 </div>
 
                 <div className={style.rightMenu}>
-                    <div>ENGLISH</div>
+                    <div>ENG</div>
                     {/* When the user is loged in the button is swapped for the currentAccount*/}
                     {/* If there is a current acc -> load up the stylish part*/}
                     {currentAccount ? (
